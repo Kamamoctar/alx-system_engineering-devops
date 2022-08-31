@@ -1,0 +1,1 @@
+The first script is for printing the path of the working directory
