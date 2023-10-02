@@ -1,1 +1,1 @@
- This direcyory is for the 0x05-processes_and_signal
+ce repertoire est pour 0x05-processes_and_signal
