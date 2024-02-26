@@ -1,2 +1,0 @@
-my optional cmd Practice
-command_line_for_the_win
