@@ -1,13 +1,8 @@
-
+Toggle navigation
+Curriculum
+SE Foundations
+Average: 89.67%
 0x0A. Configuration management
-DevOps
-SysAdmin
-Scripting
-CI/CD
- By: Sylvain Kalache
- Weight: 1
- Project over - took place from Nov 24, 2023 3:00 AM to Nov 25, 2023 3:00 AM
- An auto review will be launched at the deadline
 In a nutshell…
 Auto QA review: 0.0/9 mandatory
 Altogether:  0.0%
@@ -96,7 +91,7 @@ Repo:
 GitHub repository: alx-system_engineering-devops
 Directory: 0x0A-configuration_management
 File: 0-create_a_file.pp
-     
+   
 1. Install a package
 mandatory
 Score: 0.0% (Checks completed: 0.0%)
@@ -121,7 +116,7 @@ Repo:
 GitHub repository: alx-system_engineering-devops
 Directory: 0x0A-configuration_management
 File: 1-install_a_package.pp
-     
+   
 2. Execute a command
 mandatory
 Score: 0.0% (Checks completed: 0.0%)
@@ -160,7 +155,5 @@ Repo:
 GitHub repository: alx-system_engineering-devops
 Directory: 0x0A-configuration_management
 File: 2-execute_a_command.pp
-     
-Copyright © 2023 ALX, All rights reserved.
-
-This repo is for shell learning with ALX tasks
+   
+Copyright © 2024 ALX, All rights reserved.

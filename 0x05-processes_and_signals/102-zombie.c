@@ -1,42 +1,40 @@
-#!/usr/bin/env bash
-# Manages the script manage_my_process.
-#   When passed the argument `start`:
-#     1. Starts manage_my_process
-#     2. Creates a file containings its PID in /var/run/my_process.pid
-#     3. Displays "manage_my_process started"
-#   When passed the argument `stop`:
-#     1. Stops manage_my_process
-#     2. Deletes the file /var/run/my_process.pid
-#     3. Displays "manage_my_process stopped"
-#   When passed the argument `restart`:
-#     1. Stops manage_my_process
-#     2. Deletes the file /var/run/my_process.pid
-#     3. Starts manage_my_process
-#     4. Creates a file containing its PID in /var/run/my_process.pid
-#     5. Displays "manage_my_process restarted"
-#   If any other or no arguments are passed, displays
-#+  "Usage: manage_my_process {start|stop|restart}"
+#include "stdio.h"
+#include "stdlib.h"
+#include "unistd.h"
 
-if [ "$1" == "start" ]
-then
-  ./manage_my_process &
-  echo $$ > /var/run/my_process.pid
-  echo "manage_my_process started"
+/**
+ * infinite_while - a function that runs forever and returns nothing
+ * Return: 0 in the end
+ */
+int infinite_while(void)
+{
+	while (1)
+	{
+		sleep(1);
+	}
+	return (0);
+}
 
-elif [ "$1" == "stop" ]
-then
-  kill "$(pgrep -f /manage_my_process)" 
-  rm /var/run/my_process.pid
-  echo "manage_my_process stopped"
+/**
+ * main - the entry to a program that creates 5 zombie process
+ * Return: 0 on success
+ */
+int main(void)
+{
+	int children = 0;
+	pid_t pid;
 
-elif [ "$1" == "restart" ]
-then
-  kill "$(pgrep -f /manage_my_process)"
-  rm /var/run/my_process.pid
-  ./manage_my_process &
-  echo $$ > /var/run/my_process.pid
-  echo "manage_my_process restarted"
-
-else
-  echo "Usage: manage_my_process {start|stop|restart}"
-fi
+	while (children < 5)
+	{
+		pid = fork();
+		if (!pid)
+			break;
+		printf("Zombie process created, PID: %i\n", (int)pid);
+		children++;
+	}
+	if (pid != 0)
+	{
+		infinite_while();
+	}
+	return (0);
+}
